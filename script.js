@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("intro-video");
   const button = document.getElementById("my-button");
 
-  video.addEventListener("ended", function () {
-    video.classList.add("hidden"); // Apply fade out and scale-up effect
+  // video.addEventListener("ended", function () {
+  //   video.classList.add("hidden"); // Apply fade out and scale-up effect
 
-    // Wait for the transition to complete before changing the position
-    setTimeout(() => {
-      video.classList.add("static"); // Change to static positioning
-    }, 2000); // Timeout should match the duration of the opacity transition
-  });
+  //   // Wait for the transition to complete before changing the position
+  //   setTimeout(() => {
+  //     video.classList.add("static"); // Change to static positioning
+  //   }, 2000); // Timeout should match the duration of the opacity transition
+  // });
 
-  video.addEventListener("ended", function () {
-    button.style.display = "flex"; // Show the button when the video ends
-  });
+  // video.addEventListener("ended", function () {
+  //   button.style.display = "flex"; // Show the button when the video ends
+  // });
 
   rejectButton.addEventListener("click", function () {
     // Hide the button after it's clicked
