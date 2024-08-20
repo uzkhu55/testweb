@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  background-position: center;
+  cursor: pointer;
 }
 
 body,
@@ -17,6 +19,11 @@ html {
   height: 100vh;
   overflow: hidden; /* Ensure no scrollbars appear */
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #intro-video {
   position: absolute;
@@ -24,8 +31,20 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the video covers the container while maintaining aspect ratio */
-  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+  object-fit: cover;
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition for opacity and transform */
+}
+
+#intro-video.hidden {
+  opacity: 0; /* Fade out the video */
+  transform: scale(1.05); /* Slight scale-up effect for smooth transition */
+}
+
+#intro-video.static {
+  position: static; /* Change to static positioning */
+  width: auto; /* Adjust width */
+  height: auto; /* Adjust height */
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition for opacity and transform */
 }
 
 #hello-text {
@@ -42,15 +61,80 @@ html {
 
 #reject-button {
   position: absolute;
-
   left: 50%;
   width: 100vw;
   height: 100vh;
   transform: translateX(-50%);
-  font-size: 16px;
+  font-size: 200px;
   z-index: 2; /* Ensure button is above video */
   cursor: pointer;
   font-weight: 700;
   background-color: black;
   color: red;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  font-family: "Jersey 10", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  gap: 20px;
+  flex-direction: column; /* Align buttons in a row */
+  justify-content: center; /* Center align buttons horizontally */
+  padding: 10px; /* Add some padding if needed */
+}
+
+.button {
+  border: 2px solid black;
+  font-family: "Avenir Next", sans-serif;
+  border-radius: 8px;
+  width: 200px;
+  height: 30px;
+  font-weight: 700;
+  background-color: white;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  width: calc(100% + 40px);
+  background-color: black;
+  color: white;
+  padding: 0px 50px; /* Increased padding to grow from center */
+  transform: translate(-20px, -2.5px);
+}
+
+.title {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+}
+
+.logoImage {
+  display: flex;
+  object-fit: cover;
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+}
+
+.footer {
+  display: flex;
+  width: 200px;
+  height: 30px;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 1rem 0;
+  justify-content: center;
 }
