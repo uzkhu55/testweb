@@ -5,6 +5,48 @@
 body {
   font-family: "Jersey 10", sans-serif;
 }
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+h2 {
+  font-size: 40px;
+}
+.fa-brands.fa-instagram {
+  color: black;
+  font-size: 50px;
+}
+a {
+  text-decoration: none;
+}
+p {
+  text-align: center;
+}
+.home {
+  padding-left: 30px;
+  color: white;
+  cursor: pointer;
+}
+.fa-solid.fa-cart-plus {
+  padding-right: 30px;
+}
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.aboutUs {
+  padding-right: 30px;
+}
+.paraText {
+  font-size: 24px;
+  display: flex;
+  text-align: center;
+  width: 50%;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -18,29 +60,31 @@ header {
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
   font-family: "Jersey 10", sans-serif;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+/* Gallery section */
 .gallery {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
   justify-content: center;
-  gap: 200px;
-  width: 1000px;
-  height: 500px;
+  gap: 20px; /* Reduced gap for better spacing on smaller screens */
+  height: auto; /* Allow height to adjust based on content */
 }
 
 .gallery-item {
   cursor: pointer;
   text-align: center;
+  width: 45%; /* Use percentage to adjust the width based on screen size */
 }
 
 .gallery-item img {
-  /* width: 100%; */
-  height: 100%;
+  width: 80%; /* Make images take full width of the container */
   object-fit: cover;
 }
-
 .modal {
   display: none;
   position: fixed;
@@ -54,33 +98,64 @@ header {
   align-items: center;
   flex-direction: column;
 }
+/* Media queries for medium devices (tablets) */
+@media only screen and (max-width: 768px) {
+  .gallery {
+    gap: 15px; /* Adjust gap for tablets */
+  }
+  .gallery-item {
+    width: 48%; /* Slightly wider for tablets */
+  }
+  .modal-content-wrapper {
+    position: relative;
+    max-width: 100%;
+    left: 27%;
+    overflow: scroll;
+    max-height: 90%;
+  }
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 480px) {
+  .gallery {
+    gap: 10px; /* Narrower gap for mobile */
+  }
+
+  .gallery-item {
+    width: 100%; /* Full width for each item on mobile */
+  }
+}
 
 .modal-content-wrapper {
   position: relative;
   max-width: 100%;
-  /* left: 27%; */
+  left: 27%;
   overflow: scroll;
   max-height: 90%;
 }
-
 .modal-content {
   width: 90%;
   height: 90%;
   transition: opacity 0.3s ease;
 }
-/* .modal-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .modal-image-container {
-  margin: 0 10px;
+  margin: 0px 10px;
 }
 
 .modal-content {
-  max-width: 45%;
+  max-width: 45%; /* Default for larger screens */
   transition: opacity 0.3s ease;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 480px) {
+  .modal-content {
+    max-width: 90%; /* Adjust width to be nearly full screen on mobile */
+  }
+  .modal-content-wrapper {
+    max-width: 100%;
+    left: 5%; /* Full width for modal content on mobile */
+  }
 }
 
 #caption1,
@@ -105,39 +180,9 @@ header {
   text-align: center;
   padding: 10px 20px;
 }
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* Center the buttons vertically */
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  position: absolute;
-  right: 400px;
-  border-radius: 3px 0 0 3px;
-}
-.prev {
-  position: absolute;
-  left: 400px;
-  border-radius: 3px 0 0 3px;
-}
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
 .footer {
   display: flex;
+  font-family: "Jersey 10", sans-serif;
   width: 100vw;
   height: 30px;
   align-items: center;

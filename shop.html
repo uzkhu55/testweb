@@ -9,21 +9,25 @@
       href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/9cd0f99006.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <header>
+        <a href="index.html">
+          <h1 class="home">HOME</h1>
+        </a>
         <h1>SHOP</h1>
+        <i class="fa-solid fa-cart-plus"></i>
       </header>
       <main>
         <div class="gallery">
           <div class="gallery-item" onclick="openModal(0)">
             <img src="image1.jpg" alt="Artwork 1" />
             <p>Artwork 1</p>
-          </div>
-          <div class="gallery-item" onclick="openModal(1)">
-            <img src="visionFront.jpg" alt="Artwork 2" />
-            <p>Artwork 2</p>
           </div>
         </div>
       </main>
@@ -36,14 +40,10 @@
             <img class="modal-content" id="modalImage2" />
             <div id="caption2"></div>
           </div>
-          <!-- <div class="modal-image-container">
-            <img class="modal-content" id="modalImage2" />
-            <div id="caption2"></div>
-          </div> -->
         </div>
       </div>
       <div class="footer">
-        <p>&copy; 2024</p>
+        <p>&copy; 2024 REJECTED</p>
       </div>
     </div>
     <script src="js.js"></script>

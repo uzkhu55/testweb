@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
   background-position: center;
   cursor: pointer;
 }
@@ -11,6 +10,7 @@ body,
 html {
   height: 100%;
   margin: 0;
+  font-family: "Jersey 10", sans-serif;
 }
 
 #container {
@@ -65,31 +65,31 @@ html {
   width: 100vw;
   height: 100vh;
   transform: translateX(-50%);
-  font-size: 200px;
+  font-size: 100px;
   z-index: 2; /* Ensure button is above video */
   cursor: pointer;
   font-weight: 700;
   background-color: black;
   color: red;
-  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
   font-family: "Jersey 10", sans-serif;
 }
 a {
   text-decoration: none;
 }
 .header {
+  height: 200px;
   display: flex;
   gap: 20px;
   flex-direction: column; /* Align buttons in a row */
-  justify-content: center; /* Center align buttons horizontally */
   padding: 10px; /* Add some padding if needed */
 }
 
 .button {
   border: 2px solid black;
-  font-family: "Avenir Next", sans-serif;
+  font-size: 24px;
+  font-family: "Jersey 10", sans-serif;
   border-radius: 8px;
-  width: 200px;
+  width: 250px;
   height: 30px;
   font-weight: 700;
   background-color: white;
@@ -111,11 +111,11 @@ a {
 
 .title {
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   height: 100vh;
 }
@@ -123,14 +123,15 @@ a {
 .logoImage {
   display: flex;
   object-fit: cover;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
   object-fit: contain;
 }
 
 .footer {
+  font-family: "Jersey 10", sans-serif;
   display: flex;
-  width: 200px;
+  width: 100%;
   height: 30px;
   align-items: center;
   background: #000;

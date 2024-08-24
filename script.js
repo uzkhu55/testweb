@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const videoElement = document.getElementById("intro-video");
   const helloText = document.getElementById("hello-text");
   const rejectButton = document.getElementById("reject-button");
-  const video = document.getElementById("intro-video");
+  // const video = document.getElementById("intro-video");
   const button = document.getElementById("my-button");
 
   // video.addEventListener("ended", function () {
