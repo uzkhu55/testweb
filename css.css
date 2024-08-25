@@ -58,10 +58,6 @@ header {
   color: white;
 }
 
-.fa-solid.fa-cart-plus {
-  padding-right: 30px;
-}
-
 /* Social Media */
 .fa-brands.fa-instagram {
   color: black;
@@ -118,16 +114,26 @@ header {
   flex-direction: column;
 }
 
+/* General styles */
 .modal-content-wrapper,
 .pmodal-content-wrapper {
-  background-color: white;
   margin: auto;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
-  position: relative;
   overflow: auto;
-  max-width: 90%;
+  max-width: 50%;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  /* Adjust the max-width value as needed */
+  .modal-content-wrapper {
+    max-width: none;
+    left: 20%; /* Remove max-width on mobile devices */
+  }
+  .pmodal-content-wrapper {
+    left: 5%;
+  }
 }
 
 .modal-content-wrapper {
@@ -144,6 +150,10 @@ header {
   width: 80%;
   max-width: 400px;
   top: 30%;
+  background-color: white;
+  text-align: center;
+  position: absolute;
+  left: 36%;
 }
 
 .modal-image-container {
@@ -247,12 +257,19 @@ header {
     width: 100%;
   }
 
-  .modal-content-wrapper,
-  .pmodal-content-wrapper {
+  .modal-content-wrapper {
     width: 90%;
     top: 40%;
   }
-
+  .pmodal-content-wrapper {
+    width: 50%;
+    height: fit-content;
+    top: 30%;
+    left: 25%;
+  }
+  h2 {
+    font-size: 20px;
+  }
   .pay-button {
     width: 50%;
   }
