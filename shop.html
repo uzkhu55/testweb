@@ -13,6 +13,8 @@
       src="https://kit.fontawesome.com/9cd0f99006.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Add Socket.IO -->
   </head>
   <body>
     <div class="container">
@@ -23,11 +25,26 @@
         <h1>SHOP</h1>
         <i class="fa-solid fa-cart-plus"></i>
       </header>
-      <main>
+      <main class="main">
         <div class="gallery">
           <div class="gallery-item" onclick="openModal(0)">
             <img src="image1.jpg" alt="Artwork 1" />
             <p>Artwork 1</p>
+          </div>
+          <div class="price">
+            <p>$100.00</p>
+            <button class="pay-button">Pay</button>
+          </div>
+          <div id="payModal" class="pmodal">
+            <div class="pmodal-content-wrapper">
+              <span class="pclose" onclick="closePayModal()">&times;</span>
+              <h2>Scan to Pay</h2>
+              <img
+                src="qr-code.png"
+                alt="QR Code for Payment"
+                class="qr-code"
+              />
+            </div>
           </div>
         </div>
       </main>
@@ -39,6 +56,8 @@
             <div id="caption1"></div>
             <img class="modal-content" id="modalImage2" />
             <div id="caption2"></div>
+            <p class="modal-price" id="modalPrice"></p>
+            <!-- Add price in modal -->
           </div>
         </div>
       </div>

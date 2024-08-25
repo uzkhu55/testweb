@@ -6,6 +6,29 @@ const images = [
   { src: "visionDTFback.jpg", caption: "Artwork 4" },
 ];
 
+// Get the modal
+const payModal = document.getElementById("payModal");
+
+// Get the button that opens the modal
+const payButton = document.querySelector(".pay-button");
+
+// Function to open the modal
+payButton.onclick = function () {
+  payModal.style.display = "block";
+};
+
+// Function to close the modal
+function closePayModal() {
+  payModal.style.display = "none";
+}
+
+// Close the modal when the user clicks anywhere outside of it
+window.onclick = function (event) {
+  if (event.target === payModal) {
+    payModal.style.display = "none";
+  }
+};
+
 function openModal(index) {
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
@@ -55,3 +78,36 @@ function showSlide(index) {
     modalImage2.style.opacity = 1;
   }, 300);
 }
+const express = require("express");
+const http = require("http");
+const socketIo = require("socket.io");
+
+// Set up the Express app
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+// Serve static files from the "public" directory
+app.use(express.static("public"));
+
+// Handle client connections
+io.on("connection", (socket) => {
+  console.log("New client connected");
+
+  // Listen for events from the client
+  socket.on("clientEvent", (data) => {
+    console.log("Client Event:", data);
+  });
+
+  // Send an update to the client
+  socket.emit("galleryUpdate", { message: "Gallery has been updated" });
+
+  // Handle disconnections
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+});
+
+// Start the server
+const port = 3000;
+server.listen(port, () => console.log(`Server running on port ${port}`));
